@@ -1,0 +1,60 @@
+[gd_scene load_steps=3 format=3 uid="uid://cuextycj7l520"]
+
+[ext_resource type="Script" path="res://main_menu.gd" id="1_61eol"]
+[ext_resource type="Texture2D" uid="uid://kjavsla4yqnq" path="res://Assets/title.png" id="2_hfv61"]
+
+[node name="MainMenu" type="Node2D"]
+script = ExtResource("1_61eol")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+visibility_layer = 512
+offset_right = 1152.0
+offset_bottom = 648.0
+color = Color(0.235294, 0.466667, 0.556863, 1)
+
+[node name="Label" type="Label" parent="."]
+offset_left = 448.0
+offset_top = 88.0
+offset_right = 488.0
+offset_bottom = 111.0
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(384, 160)
+scale = Vector2(1.65803, 1.46341)
+texture = ExtResource("2_hfv61")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+top_level = true
+offset_left = 128.0
+offset_top = 280.0
+offset_right = 640.0
+offset_bottom = 600.0
+theme_override_constants/separation = 14
+alignment = 1
+
+[node name="Campaign" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "Campaign"
+
+[node name="Multiplayer" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "Multiplayer"
+
+[node name="ArmyBuilder" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "Team Builder"
+
+[node name="Collection" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "Collection"
+
+[node name="Rules" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "Rules"
+
+[node name="Exit" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "Exit"
+
+[connection signal="pressed" from="VBoxContainer/ArmyBuilder" to="." method="_on_army_builder_pressed"]
+[connection signal="pressed" from="VBoxContainer/Exit" to="." method="_on_exit_pressed"]
